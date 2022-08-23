@@ -1,5 +1,6 @@
 package main
 
+/*lol comment*/
 import (
 	"fmt"
 	"te4-introprojekt/metastore"

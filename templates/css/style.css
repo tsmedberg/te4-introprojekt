@@ -1,0 +1,12 @@
+.post {
+    border: 1px solid black;
+}
+.created::before {
+    content: 'Skapad: ';
+}
+.modified::before {
+    content: 'Ändrad: ';
+}
+form input[readonly] {
+    color: gray;
+}

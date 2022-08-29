@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <a href="/create">Nytt inlägg</a>
+    {{range .posts}}
+    <div class="post">
+        <p class="content">{{ .Content }}</p>
+        <p class="author" style="font-style: italic;">{{ .Author }}</p>
+        <p class="created">{{ .Created  }}</p>
+        <p class="modified">{{ .Modified }}</p>
+        <a href="/post/{{ .Id }}">Ändra</a>
+        <a href="/delete/{{ .Id }}">Ta bort</a>
+    </div>
+    {{end}}
+</body>
+</html>

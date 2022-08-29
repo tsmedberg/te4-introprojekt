@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta bort</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    vill du ta bort ??????
+    <div class="post">
+        <p class="content">{{ .Post.Content }}</p>
+        <p class="author" style="font-style: italic;">{{ .Post.Author }}</p>
+        <p class="created">{{ .Post.Created  }}</p>
+        <p class="modified">{{ .Post.Modified }}</p>
+    </div>
+    <form action="" method="post">
+        <input type="submit" value="Ja">
+    </form>
+    <button onclick="window.location.pathname = '/'">Nej</button>
+</body>
+</html>

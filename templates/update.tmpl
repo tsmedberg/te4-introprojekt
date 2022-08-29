@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppdatera</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <form action="" method="post">
+        <label for="form_author">Författare</label>
+        <input type="text" name="Author" id="form_author" value="{{ .Post.Author }}">
+        <label for="form_content">Innehåll</label>
+        <input type="text" name="Content" id="form_content" value="{{ .Post.Content }}">
+        <label for="form_created">Skapad:</label>
+        <input type="text" readonly name="" id="form_created" value="{{ .Post.Created }}">
+        <input type="submit" value="Spara">
+    </form>
+</body>
+</html>

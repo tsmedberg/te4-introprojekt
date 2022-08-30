@@ -17,8 +17,13 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		posts, err := database.Read()
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-			return
+			if err.Error() == "no such table: posts" {
+				c.Redirect(http.StatusTemporaryRedirect, "/create")
+				return
+			} else {
+				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+				return
+			}
 		}
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"posts": posts,

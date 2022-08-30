@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .post {
-    border: 1px solid black;
+    border: 5px outset black;
+    max-width: 400px;
+    line-break: auto;
+    padding: 0.5rem;
+}
+.content {
+    font-family: 'Comic Neue', cursive;
+    font-style: italic;
+    font-weight: bold;
+}
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 .created::before {
     content: 'Skapad: ';
@@ -9,4 +28,27 @@
 }
 form input[readonly] {
     color: gray;
+}
+header {
+    width: 100%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    max-width: 600px;
+}
+footer {
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#time {
+    text-align: end;
+}
+header a {
+    background-color: white;
+    width: fit-content;
+    border: 1px solid grey;
 }

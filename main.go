@@ -13,6 +13,7 @@ func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("templates/*.tmpl")
 	r.Static("/css", "templates/css")
+	r.Static("/images", "templates/images")
 	r.GET("/", func(c *gin.Context) {
 		posts, err := database.Read()
 		if err != nil {

@@ -8,16 +8,30 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <a href="/create">Nytt inlägg</a>
-    {{range .posts}}
-    <div class="post">
-        <p class="content">{{ .Content }}</p>
-        <p class="author" style="font-style: italic;">{{ .Author }}</p>
-        <p class="created">{{ .Created  }}</p>
-        <p class="modified">{{ .Modified }}</p>
-        <a href="/post/{{ .Id }}">Ändra</a>
-        <a href="/delete/{{ .Id }}">Ta bort</a>
+    <header>
+        <a href="/create">Nytt inlägg</a>
+        <p id="time"></p>
+    </header>
+    <hr>
+    <div class="posts">
+        {{range .posts}}
+        <div class="post">
+            <p class="content">{{ .Content }}</p>
+            <p class="author" style="font-style: italic;">{{ .Author }}</p>
+            <p class="created"><code>{{ .Created  }}</code></p>
+            <p class="modified"><code>{{ .Modified }}</code></p>
+            <a href="/post/{{ .Id }}">Ändra</a>
+            <a href="/delete/{{ .Id }}">Ta bort</a>
+        </div>
+        {{end}}
     </div>
-    {{end}}
+    <hr>
+    <footer><p>Copyright SVT 2000</p><a href="https://web.archive.org/web/19961018092903/http://www.svt.se:80/" target="_blank"><img src="/images/svt.gif" alt=""></a></footer>
+    <script defer>
+        let t = document.getElementById("time")
+        setInterval(()=>{
+            t.innerText = new Date().toLocaleString();
+        },1000)
+    </script>
 </body>
 </html>
